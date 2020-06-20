@@ -12,7 +12,7 @@ Dataset for training can be found on [Kaggle DFDC Challenge](https://www.kaggle.
 First, individual frames are extracted from both the test and train videos. The 3-D Conv-net takes as input frames of size 112 x 112 x 16 x 3[RGB Channels]. Faces cropped to size 112 x 112 are extracted from individual frames using OpenCV’s face detection neural network.  The first frame of these 16 frames is chosen randomly from the whole sequence of frames.
 
 ## Requirements
-I have used Conda to download all the necessary requirements 
+We have used Conda to download all the necessary requirements 
 
 ## Preparation
 To convert the videos to individual frames use 

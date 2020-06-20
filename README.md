@@ -20,7 +20,6 @@ To convert the videos to individual frames use
 ```bash
 python -m util_scripts.generate_video_jpgs avi_video_dir_path jpg_video_dir_path faceforensics
 ```
-To extract faces run the code in the folder 'Extract Faces from Images'. The details for running the code can be found inside the folder.
 
 To create the JSON file necessary for training use 
 

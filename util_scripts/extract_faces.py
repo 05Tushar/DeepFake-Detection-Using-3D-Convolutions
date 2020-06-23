@@ -25,8 +25,8 @@ def video_process(video_file_path, dst_root_path, ext, fps=-1):
     vidObj = cv2.VideoCapture(pt)
     count = 1
     success = 1
-    W = 130
-    H = 130
+    W = 120
+    H = 120
     while success:
         success, image = vidObj.read()
         if success:

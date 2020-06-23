@@ -22,7 +22,6 @@ def video_process(video_file_path, dst_root_path, ext, fps=-1):
     dst_dir_path.mkdir(exist_ok=True)
 
     pt = str(video_file_path)
-    print(pt)
     vidObj = cv2.VideoCapture(pt)
     count = 1
     success = 1

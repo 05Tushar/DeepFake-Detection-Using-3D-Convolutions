@@ -47,21 +47,22 @@ def video_process(video_file_path, dst_root_path, ext, fps=-1):
                 minSize=(30, 30)
             )
 
-            x = faces[0][0]
-            y = faces[0][1]
-            w = faces[0][2]
-            h = faces[0][3]
-            c_x = x + w / 2
-            c_y = y + h / 2
-            x = constrain(c_x, W)
-            y = constrain(c_y, H)
-            w = W
-            h = H
-            roi_color = image[y:y + h, x:x + w]
-            print('Creating Image {}/image_%05d.jpg'.format(dst_dir_path) % count)
-            cv2.imwrite('{}/image_%05d.jpg'.format(dst_dir_path) % count, roi_color)
+            if faces.shape[0]>0:
+                x = faces[0][0]
+                y = faces[0][1]
+                w = faces[0][2]
+                h = faces[0][3]
+                c_x = x + w / 2
+                c_y = y + h / 2
+                x = constrain(c_x, W)
+                y = constrain(c_y, H)
+                w = W
+                h = H
+                roi_color = image[y:y + h, x:x + w]
+                print('Creating Image {}/image_%05d.jpg'.format(dst_dir_path) % count)
+                cv2.imwrite('{}/image_%05d.jpg'.format(dst_dir_path) % count, roi_color)
+                count += 1
 
-            count += 1
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

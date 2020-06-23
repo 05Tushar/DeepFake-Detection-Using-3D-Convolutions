@@ -47,7 +47,7 @@ def video_process(video_file_path, dst_root_path, ext, fps=-1):
                 minSize=(30, 30)
             )
 
-            if faces.shape[0]>0:
+            if (len(faces) != 0):
                 x = faces[0][0]
                 y = faces[0][1]
                 w = faces[0][2]

@@ -1,0 +1,18 @@
+To run main file for UCF
+python main.py --root_path ~/Desktop/IIT/data --video_path ucf101_videos/jpg --annotation_path ucf101_01.json --result_path results --dataset ucf101 --n_classes 101 --n_pretrain_classes 700 --pretrain_path models/resnet-50-kinetics.pth --ft_begin_module fc --model resnet --model_depth 50 --batch_size 128 --n_threads 4 --checkpoint 5
+
+To run main file for Faceforensics
+python main.py --root_path ~/Desktop/IIT/data_forensics --video_path faceforensics/jpg --annotation_path faceforensics.json --result_path results --dataset faceforensics --n_classes 2 --n_pretrain_classes 700 --pretrain_path models/resnet-50-kinetics.pth --ft_begin_module fc --model resnet --model_depth 50 --batch_size 16 --n_threads 4 --checkpoint 5
+
+Generate faceforensics JSON
+python -m util_scripts.faceforensics_json ~/Desktop/IIT/faceforensics/jpg ~/Desktop/IIT/metadata.json ~/Desktop/IIT/temp.json
+python -m util_scripts.faceforensics_json ~/Desktop/IIT/data_forensics/faceforensics/jpg ~/Desktop/IIT/data_forensics/metadata.json ~/Desktop/IIT/data_forensics/faceforensics.json
+
+Generate UCF JSON
+python -m util_scripts.ucf101_json ~/Desktop/IIT/data/annotation ~/Desktop/IIT/data/ucf101_videos/jpg ~/Desktop/IIT/data/tmp_json
+
+To generate high resolution JPEGS
+python -m util_scripts.generate_video_jpgs_high_res ~/Downloads/Tushar/data_forensics/videos ~/Downloads/Tushar/data_forensics/faceforensics/jpg faceforensics
+
+To extract faces from videos
+python -m util_scripts.extract_faces ~/Desktop/IIT/dfdc/faceforensics ~/Desktop/IIT/data_forensics/faceforensics/jpg_test faceforensics
